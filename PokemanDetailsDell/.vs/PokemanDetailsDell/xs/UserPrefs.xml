@@ -1,0 +1,48 @@
+﻿<Properties StartupConfiguration="{3779B2F4-4800-405C-A53A-78357F5AC81F}|Default">
+  <MonoDevelop.Ide.ItemProperties.PokemanDetailsDell.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" TriggeredFromHotReload="False" PreferredExecutionTarget="Android.googlepixelc" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PokemanDetailsDell/ViewModels/PokemanListPageViewModel.cs">
+    <Files>
+      <File FileName="PokemanDetailsDell/CommonFiles/Constants.cs" Line="15" Column="1" />
+      <File FileName="PokemanDetailsDell/Views/PokemanListPage.xaml" Line="32" Column="63" />
+      <File FileName="PokemanDetailsDell/Views/PokemanListPage.xaml.cs" Line="28" Column="10" />
+      <File FileName="PokemanDetailsDell/ViewModels/PokemanListPageViewModel.cs" Line="277" Column="40" />
+      <File FileName="PokemanDetailsDell/Models/PokemonModel.cs" Line="67" Column="52" />
+      <File FileName="PokemanDetailsDell/CustomControls/PokemonDetailsView.xaml" Line="30" Column="63" />
+      <File FileName="PokemanDetailsDell/Models/PokemonTypeModel.cs" Line="8" Column="28" />
+      <File FileName="PokemanDetailsDell/App.xaml.cs" Line="18" Column="49" />
+      <File FileName="PokemanDetailsDell.Android/MainActivity.cs" Line="21" Column="72" />
+      <File FileName="PokemanDetailsDell.iOS/AppDelegate.cs" Line="25" Column="72" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PokemanDetailsDell" expanded="True">
+            <Node name="PokemanDetailsDell" expanded="True">
+              <Node name="CommonFiles" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Styles" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="PokemanListPageViewModel.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="PokemanListPage.xaml" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+            <Node name="PokemanDetailsDell.Android" expanded="True" />
+            <Node name="PokemanDetailsDell.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.PokemanDetailsDell.iOS TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.30F52590-8A9B-466E-941D-5C24629F9699" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Catchpoint enabled="false" exceptionName="System.Exception" includeSubclasses="True" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

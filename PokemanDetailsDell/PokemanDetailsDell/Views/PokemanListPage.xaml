@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemanDetailsDell.Views.PokemanListPage"
+             xmlns:control="clr-namespace:PokemanDetailsDell.CustomControls;assembly=PokemanDetailsDell"
+             Title="Pokemon List"
+             x:Name="pokemonListPage">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+              RowSpacing="20" Padding="0">
+            <Grid.Background>
+               <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+                        <GradientStop Color="#e3f25e"
+                                      Offset="0.55"/>
+                        <GradientStop Color="LightSeaGreen"
+                                      Offset="1.0"/>
+                    </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="Pokemon List is below, please click on any of the items to see details or select ant type from the drop down to filter based on type!!" HorizontalTextAlignment="Center"
+                   FontSize="20" FontAttributes="Bold" Padding="10" TextColor="Brown"/>
+
+            <Picker x:Name="pickerPokemonType" Margin="20,0" Title="Select Pokemon Type" HeightRequest="50"
+                    ItemsSource="{Binding PokemonTypes.results}" Grid.Row="1"
+                    ItemDisplayBinding="{Binding name}" FontAttributes="Bold"
+                    SelectedItem="{Binding SelectedPokemonName}"
+                    TextColor="Brown" FontSize="18">
+                <Picker.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+                        <GradientStop Color="#e3f25e"
+                                      Offset="0.55"/>
+                        <GradientStop Color="LightSeaGreen"
+                                      Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Picker.Background>
+            </Picker>
+
+            <Button Text="Reload Details" HeightRequest="55" Grid.Row="3" FontSize="18" TextColor="Brown"
+                    BorderColor="Green" BorderWidth="1" CornerRadius="5" Margin="20,0,20,20"
+                    Command="{Binding ReloadPokemonDetails}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+                             EndPoint="1,0">
+                        <GradientStop Color="#e3f25e"
+                                      Offset="0.55"/>
+                        <GradientStop Color="LightSeaGreen"
+                                      Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+              <ListView ItemsSource="{Binding PokemonDetailsCollection}" Grid.Row="2" HasUnevenRows="True" Margin="5,0,5,0"
+                            HorizontalScrollBarVisibility="Never" VerticalOptions="StartAndExpand"
+                            VerticalScrollBarVisibility="Never"  SelectionMode="None" SeparatorColor="DarkGreen"
+                        ItemAppearing="ListView_ItemAppearing" x:Name="pokemonListView" BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                  ColumnSpacing="0" Padding="0">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.PokemonDetailsCommand,Source={x:Reference Name=pokemonListPage}}"
+                                    CommandParameter="{Binding }" NumberOfTapsRequired="1"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="{Binding url}" HeightRequest="50"/>
+                                <Label Grid.Column="1" Text="{Binding name}" VerticalOptions="CenterAndExpand" TextColor="Brown"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+              </ListView>
+
+            <control:PokemonDetailsView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                        Grid.Row="0" Grid.RowSpan="4" BackgroundColor="#AA000000"
+                                        IsVisible="{Binding IsPokemonDetailsVisible}"
+                                        Margin="0"/>
+
+             <ActivityIndicator IsVisible="{Binding IsActivityInProgress}" IsRunning="{Binding IsActivityInProgress}"
+                        Color="Black" HeightRequest="200" WidthRequest="200" VerticalOptions="Center"
+                        HorizontalOptions="Center" Grid.Row="0" Grid.RowSpan="4"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemanDetailsDell.CustomControls.PokemonDetailsView"
+             Padding="40">
+    <ContentView.Content>
+        <StackLayout Padding="1" BackgroundColor="#007ACF" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" >
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="20,10"
+                BindableLayout.ItemsSource="{Binding PokemonDetail}" BackgroundColor="White"
+                  RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding PokemonDetail.sprites.other.OfficialArtwork.front_default}" Margin="0,10"
+                       Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                <Label Text="ID" Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding PokemonDetail.id}" Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                <Label Text="Height" Grid.Row="2" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding PokemonDetail.height}" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                <Label Text="Weight" Grid.Row="3" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding PokemonDetail.weight}" Grid.Row="3" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                <Label Text="Type" Grid.Row="4" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding PokemonDetail.PokemonType}" Grid.Row="4" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                <Button Text="Cancel" Grid.Row="5" Grid.ColumnSpan="2" HeightRequest="50" FontSize="18"
+                        BackgroundColor="#007ACF" TextColor="White" CornerRadius="0"
+                        Command="{Binding CancelPopUpCommand}"/>
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
